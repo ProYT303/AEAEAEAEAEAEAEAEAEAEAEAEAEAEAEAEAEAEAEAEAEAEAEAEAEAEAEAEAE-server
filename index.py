@@ -25,7 +25,6 @@ class WebserverHandler(BaseHTTPRequestHandler):
         self.wfile.write(bytes(message, "utf8"))
         return 0
       s = ''.join(random.choice(string.ascii_uppercase + string.digits) for _ in range(100))
-      print(LINK)
       db[f"{s}"] = LINK
       Outputlink = f'https://AEAEAEAEAEAEAEAEAEAEAEAEAEAEAEAEAEAEAEAEAEAEAEAEAEAEAEAEAE-1.mewhenamongusss.repl.co/{s}'
       message = "{'message': 'Success.', 'link': '",Outputlink,"'}"
