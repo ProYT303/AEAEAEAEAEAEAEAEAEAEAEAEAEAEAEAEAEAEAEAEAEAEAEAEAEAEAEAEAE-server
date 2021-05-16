@@ -24,11 +24,16 @@ class WebserverHandler(BaseHTTPRequestHandler):
         message = "{'message': 'Failed.'}"
         self.wfile.write(bytes(message, "utf8"))
         return 0
-      s = ''.join(random.choice(string.ascii_uppercase + string.digits) for _ in range(20))
+      s = ''.join(random.choice(string.ascii_uppercase + string.digits) for _ in range(100))
       print(LINK)
       db[f"{s}"] = LINK
       Outputlink = f'https://AEAEAEAEAEAEAEAEAEAEAEAEAEAEAEAEAEAEAEAEAEAEAEAEAEAEAEAEAE-1.mewhenamongusss.repl.co/{s}'
       message = "{'message': 'Success.', 'link': '",Outputlink,"'}"
+      message = list(message)
+      message = "".join(message)
+      
+    else:
+      message = 'bruh its /api not this one'
     self.wfile.write(bytes(message, "utf8"))
   def do_GET(self):
     self._set_response()
